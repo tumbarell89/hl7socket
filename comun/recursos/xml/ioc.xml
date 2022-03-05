@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ioc>
+    <!-- Servicios del Distra al sistema Xava HIS-->
+    <masterhl7 src="masterhl7/masterhl7">
+        <DatosAAdcionarPersona reference="">
+            <inyector clase="HL7Service" metodo="DatosAAdcionarPersona"/>
+            <prototipo>
+                <parametro nombre="datos" tipo="array"/>
+                <parametro nombre="subsistema" tipo="string"/>
+                <parametro nombre="operacion" tipo="string"/>
+                <resultado tipo="enterospos"/>
+            </prototipo>
+        </DatosAAdcionarPersona>        
+        <DatosAEliminarPersona reference="">
+            <inyector clase="HL7Service" metodo="DatosAEliminarPersona"/>
+            <prototipo>
+                <parametro nombre="datos" tipo="array"/>
+                <parametro nombre="subsistema" tipo="string"/>
+                <parametro nombre="operacion" tipo="string"/>
+                <resultado tipo="enterospos"/>
+            </prototipo>
+        </DatosAEliminarPersona>        
+        <DatosAModificarPersona reference="">
+            <inyector clase="HL7Service" metodo="DatosAModificarPersona"/>
+            <prototipo>
+                <parametro nombre="datos" tipo="array"/>
+                <parametro nombre="subsistema" tipo="string"/>
+                <parametro nombre="operacion" tipo="string"/>
+                <resultado tipo="enterospos"/>
+            </prototipo>
+        </DatosAModificarPersona>    
+        <serviciosFacturados reference="">
+            <inyector clase="HL7Service" metodo="serviciosFacturados"/>
+            <prototipo>
+                <parametro nombre="arrayidcliente" tipo="array"/>
+                <parametro nombre="arrayservicios" tipo="array"/>
+                <resultado tipo="enterospos"/>
+            </prototipo>
+        </serviciosFacturados> 
+        <serviciosNoHaFacturar reference="">
+            <inyector clase="HL7Service" metodo="serviciosNoHaFacturar"/>
+            <prototipo>
+                <parametro nombre="arrayidcliente" tipo="array"/>
+                <parametro nombre="arrayservicios" tipo="array"/>
+                <resultado tipo="enterospos"/>
+            </prototipo>
+        </serviciosNoHaFacturar>              
+    </masterhl7>
+
+    
+</ioc>

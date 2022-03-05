@@ -1,0 +1,16 @@
+<his>
+    <config configurado="1"
+            portlocal="5450" 
+            portclient="5470" 
+            ipcliente="192.1.1.192" 
+            sendapp="MMMM"
+            recvapp="dddd"
+            recvfac="ddddd
+            hl7version="2.5.1"
+            dirsoap="https://asasassa.cu"			
+    />
+</his>
+
+        <!--pwd="82834433583811093699 83963739955350785615 87241927237202529829 897410677851"-->
+
+        <!--<config_email secure="tls" mailer="smtp" host="smtp.xetid.cu" port="25" user="experto@xetid.cu" username="Sistema Automatizado" pwd="11438228533072219400 73968761098477877842"/>-->

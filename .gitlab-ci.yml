@@ -1,0 +1,37 @@
+before_script:
+  
+#Lista de trabajos
+stages:
+    - build
+    - test_syntax
+    - deploy
+
+build_a:
+    stage: build
+    script:
+        - echo "Pasando contruccion"
+    
+    tags:
+        - hl7
+
+# Verificar sintaxis php
+test_syntax:
+    stage: test_syntax
+    needs: [build_a]
+    script:
+        - exit $(find . -type f \( -name "*.php" -o -name "*.phtml" \) -exec /opt/cicarpeta/php/bin/php -l '{}' \;| grep -vc '^No syntax errors')
+
+    tags:
+        - hl7
+
+#Despliegue a sitio
+deploy_ge:
+    stage: deploy
+    needs: [test_syntax]
+    script:
+        - rsync -rz $CI_PROJECT_DIR/ /opt/cicarpeta/www/cicarpeta/htdocs/apps/masterhl7/
+    only:
+        - dev
+        
+    tags:
+        - hl7

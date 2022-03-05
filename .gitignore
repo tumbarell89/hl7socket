@@ -1,0 +1,5 @@
+/nbproject/private/*.properties
+/nbproject/private
+/nbproject/*.properties
+/nbproject/*.xml
+/HL7/server_error.log
